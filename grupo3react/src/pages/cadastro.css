@@ -33,12 +33,12 @@ body {
     top: 25%; 
 }
 
-.form h1 {
+.cadastro {
     font-size: 28px;
     display: flex;
     position: absolute;
     top: 14%; 
-    left: 5%;
+    left: 33%;
 }
 
 form {
@@ -88,7 +88,17 @@ button {
     border-radius: 10px;
     font-size: 20px;
     border: none;
-    margin-top: 40px;
+    margin-top: 20px;
+    margin-bottom: 5px;
     width: 350px;
     height: 40px;
+}
+
+.labelButton {
+    margin-left: 50px;
+}
+
+.form a {
+    color: #f3c327;
+    text-decoration: none;
 }
