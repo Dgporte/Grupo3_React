@@ -1,0 +1,85 @@
+{
+  "users": [
+    {
+      "id": "bfc1",
+      "nome": "Raphael",
+      "email": "rapha@email.com",
+      "senha": "123456"
+    },
+    {
+      "id": "d02a",
+      "nome": "renan",
+      "email": "renan@email.com",
+      "senha": "654321"
+    }
+  ],
+  "produtos": [
+    {
+      "id": "1",
+      "nome": "Bitcoin",
+      "imgurl": "http://",
+      "descrição": "descrição do produto",
+      "preco": 10312321231,
+      "categoria": "alimento",
+      "quantidade": 14444
+  },
+  {
+      "id": "2",
+      "nome": "Etherium",
+      "imgurl": "http://",
+      "descrição": "descrição do produto",
+      "preco": 103123,
+      "categoria": "criptomoeda famosa",
+      "quantidade": 1333
+  },
+  {
+    "id": "3",
+    "nome": "DogeCoin",
+    "imgurl": "http://",
+    "descrição": "descrição do produto",
+    "preco": 9993,
+    "categoria": "criptomoeda famosa",
+    "quantidade": 33
+},
+{
+  "id": "4",
+  "nome": "BNB",
+  "imgurl": "http://",
+  "descrição": "descrição do produto",
+  "preco": 9993,
+  "categoria": "criptomoeda famosa",
+  "quantidade": 33
+},
+{
+  "id": "5",
+  "nome": "SOLANA",
+  "imgurl": "http://",
+  "descrição": "descrição do produto",
+  "preco": 9993,
+  "categoria": "criptomoeda famosa",
+  "quantidade": 33
+},
+{
+  "id": "6",
+  "nome": "Cardano",
+  "imgurl": "http://",
+  "descrição": "descrição do produto",
+  "preco": 9993,
+  "categoria": "criptomoeda famosa",
+  "quantidade": 33
+}
+  ],
+  "pedidos": [
+    {
+      "id": "d03c",
+      "idUser": "bfc1",
+      "valorTotal": 20,
+      "itens": [
+        {
+          "idProduto": "faba",
+          "quantidade": 2
+        }
+      ]
+    }
+  ]
+}
