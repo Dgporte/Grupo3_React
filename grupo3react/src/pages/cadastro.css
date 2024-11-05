@@ -33,12 +33,12 @@ body {
     top: 25%; 
 }
 
-.form h1 {
+.cadastro {
     font-size: 28px;
     display: flex;
     position: absolute;
     top: 14%; 
-    left: 5%;
+    left: 33%;
 }
 
 form {
@@ -94,7 +94,7 @@ button {
     height: 40px;
 }
 
-.form p {
+.labelButton {
     margin-left: 50px;
 }
 

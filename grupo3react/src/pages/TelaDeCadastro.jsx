@@ -44,7 +44,7 @@ export function TelaDeCadastro() {
                 <div className='image'>
                     <img src="src/img/logo10.png" alt="" />
                 </div>
-                    <h1>Cadastro</h1>
+                    <h1 className='cadastro'>Cadastro</h1>
                     <form onSubmit={handleFazerCadastro} onReset={handleFormReset}>
                         <label>Nome</label>
                         <input value={nome} onChange={handleAdicionarNome} placeholder=' Digite seu nome' type="text" />
@@ -60,7 +60,7 @@ export function TelaDeCadastro() {
                                         <label>Senha</label>
                                         <input value={senha} onChange={handleAdicionarSenha} placeholder=' Digite sua senha' type="password" />
                                         <button>Cadastrar</button>
-                                        <p>Já possui cadastro? <a href="">Faça login!</a></p>
+                                        <p className='labelButton'>Já possui cadastro? <a href="/login">Faça login!</a></p>
                                     </form>
                                 </div>
                             </main>
