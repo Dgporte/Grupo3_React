@@ -1,9 +1,11 @@
 
 
-import { BrowserRouter, Route, Switch } from 'react-router-dom/cjs/react-router-dom.min'
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import './App.css'
 import { TelaDeCadastro } from './pages/TelaDeCadastro'
+import Produto from './pages/Produtos/Produto'
+import CategoriaDetalhe from "./pages/Produtos/CategoriaDetalhe";
 
 
 function App() {
@@ -14,6 +16,8 @@ function App() {
     <BrowserRouter>
     <Switch>
       <Route exact path='/TelaDeCadastro' component={TelaDeCadastro}/>
+      <Route exact path='/Produto' component={Produto} />
+      <Route path='/categoria/:category' component={CategoriaDetalhe} />
     </Switch>
     </BrowserRouter>
 
