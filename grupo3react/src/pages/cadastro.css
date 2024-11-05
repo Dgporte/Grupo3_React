@@ -88,7 +88,17 @@ button {
     border-radius: 10px;
     font-size: 20px;
     border: none;
-    margin-top: 40px;
+    margin-top: 20px;
+    margin-bottom: 5px;
     width: 350px;
     height: 40px;
+}
+
+.form p {
+    margin-left: 50px;
+}
+
+.form a {
+    color: #f3c327;
+    text-decoration: none;
 }

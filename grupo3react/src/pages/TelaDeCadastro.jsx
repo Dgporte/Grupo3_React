@@ -60,6 +60,7 @@ export function TelaDeCadastro() {
                                         <label>Senha</label>
                                         <input value={senha} onChange={handleAdicionarSenha} placeholder=' Digite sua senha' type="password" />
                                         <button>Cadastrar</button>
+                                        <p>Já possui cadastro? <a href="">Faça login!</a></p>
                                     </form>
                                 </div>
                             </main>
