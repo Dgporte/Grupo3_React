@@ -17,13 +17,11 @@ export function Login() {
   }
 
   const handleEnviar = async (e) => {
-    e.prevenetDefault();
+    e.preventDefault();
     try {
-      console.log("teste:", email, senha)
       const response = await api.get("/users", {
         params:{email:email, senha:senha}
       });
-      console.log("response:", response);
       if(response.status === 200) {
         if(response.data.length === 1) {
           const user = response.data[0];
@@ -31,11 +29,11 @@ export function Login() {
             setSucessMessage("Usuário logado com sucesso!");
           }
           else {
-            setSucessMessage("Email ou senha incorreta!");
+            setSucessMessage("Email ou senha inválidos!");
           }
         }
         else {
-          setSucessMessage("Email ou senha incorreta!");
+          setSucessMessage("Email ou senha inválidos!");
         }
       }
       else {
@@ -46,10 +44,7 @@ export function Login() {
       setSucessMessage("Erro ao logar usuário!");
     }
   };
-  // const handleFormReset = () => {
-  //   setEmail("");
-  //   setSenha("");
-  // };
+
   return (
     <>
       <main className="main">
@@ -80,7 +75,7 @@ export function Login() {
               Manter conectado
             </label>
             {sucessMessage && (
-        <div>
+        <div className="message">
           {sucessMessage}
         </div>
       )}
