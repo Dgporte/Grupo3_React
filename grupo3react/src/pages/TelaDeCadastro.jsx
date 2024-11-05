@@ -1,10 +1,37 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { api } from "../api/api";
 import './cadastro.css'
 export function TelaDeCadastro() {
     const [nome, setNome] = useState('')
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
     const [cadastro, setCadastro] = useState([])
+    const [error, SetError] = useState("");
+    const [sucessMessage, setSucessMessage] = useState("");
+
+    useEffect(() => {
+        getallpost()
+      },[])
+    
+      const getallpost = async () => {
+        const response = await api.post('/users')
+        setCadastro(response.data)
+      }
+
+      const handleEnviar = async (e) => {
+        e.preventDefault();
+        const newUser = {nome, email, senha}
+        try {
+          const response = await api.post("/users", newUser);
+          setSucessMessage("Usuário cadastrado com sucesso!");
+          setNome('')
+          setEmail('')
+          setSenha('')
+        }
+        catch (error) {
+          setSucessMessage("Erro ao cadastrar usuário!", error);
+        }
+      };
 
     const handleAdicionarNome = (e) => {
         setNome(e.target.value);
@@ -33,7 +60,6 @@ export function TelaDeCadastro() {
         }
         setCadastro([...cadastro, cadastros]);
         handleFormReset();
-        alert("Cadastro bem sucedido");
     }
 
 
@@ -45,7 +71,7 @@ export function TelaDeCadastro() {
                     <img src="src/img/logo10.png" alt="" />
                 </div>
                     <h1 className='cadastro'>Cadastro</h1>
-                    <form onSubmit={handleFazerCadastro} onReset={handleFormReset}>
+                    <form onSubmit={handleEnviar} onReset={handleFormReset}>
                         <label>Nome</label>
                         <input value={nome} onChange={handleAdicionarNome} placeholder=' Digite seu nome' type="text" />
                         <label>E-mail</label>
@@ -59,6 +85,11 @@ export function TelaDeCadastro() {
                         </datalist>
                                         <label>Senha</label>
                                         <input value={senha} onChange={handleAdicionarSenha} placeholder=' Digite sua senha' type="password" />
+                                        {sucessMessage && (
+                                        <div className="message">
+                                        {sucessMessage}
+                                        </div>
+                                        )}
                                         <button>Cadastrar</button>
                                         <p className='labelButton'>Já possui cadastro? <a href="/login">Faça login!</a></p>
                                     </form>
