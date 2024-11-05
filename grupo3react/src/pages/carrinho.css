@@ -23,19 +23,19 @@ body {
 
 .form {
     display: flex;
-    flex-direction: column; /* Garante que os elementos dentro do form se empilhem verticalmente */
-    align-items: flex-start; /* Alinha os itens à esquerda */
+    flex-direction: column;
+    align-items: flex-start;
     border-radius: 20px;
     width: 80%;
     border: 0.01px solid rgba(255, 255, 255, 0.1);
     background-color: #1c1c24;
     color: white;
-    padding: 20px; /* Adiciona preenchimento para dar espaço interno */
-    margin: auto; /* Centraliza horizontalmente */
-    top: 25%; /* Pode ser removido se você não estiver usando position absolute */
-    position: relative; /* Mantenha o form no fluxo normal do documento */
-    max-height: 80vh; /* Limita a altura máxima do formulário */
-    overflow-y: auto; /* Adiciona rolagem se o conteúdo exceder a altura máxima */
+    padding: 20px;
+    margin: auto;
+    top: 25%;
+    position: relative;
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
 
@@ -63,8 +63,24 @@ body {
 
 .form2 {
     display: flex;
-    flex-direction: column;
-    margin-top: 5%;
+    margin-top: 10%;
+    position: relative;
+    width: 100%;
+}
+
+.produtos-container {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.carrinho-container {
+    width: 400px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    background-color: #1c1c24;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 10px;
 }
 
 .subtitulo {
@@ -73,9 +89,6 @@ body {
 }
 
 .lista {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
     list-style-type: none;
     padding: 0;
 }
@@ -83,6 +96,7 @@ body {
 .lista li {
     border: 1px solid #ccc;
     padding: 10px;
+    margin: 5px 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
