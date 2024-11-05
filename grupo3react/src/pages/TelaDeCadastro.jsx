@@ -1,10 +1,30 @@
 import { useState } from 'react'
+import { api } from "../api/api";
 import './cadastro.css'
 export function TelaDeCadastro() {
-    const [nome, setNome] = useState('')
-    const [email, setEmail] = useState('')
-    const [senha, setSenha] = useState('')
-    const [cadastro, setCadastro] = useState([])
+    const [nome, setNome] = useState("")
+    const [email, setEmail] = useState("")
+    const [senha, setSenha] = useState("")
+    const [sucessMessage, setSucessMessage] = useState("");
+    
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        const newUser = {nome, email, senha}
+    
+        try {
+            const response = await api.post("/users", newUser)
+            setSucessMessage("Usuário cadastrado com sucesso!");
+            setNome("");
+            setEmail("");
+            setSenha("");
+        } catch (error) {
+            console.error("Erro ao cadastrar usuário: ", error);
+            setSucessMessage("Erro ao cadastrar usuário.");
+        }
+      }
+
+
 
     const handleAdicionarNome = (e) => {
         setNome(e.target.value);
@@ -24,17 +44,16 @@ export function TelaDeCadastro() {
         setSenha('');
     }
 
-    const handleFazerCadastro = (e) => {
-        e.preventDefault();
-        let cadastros = {
-            nome,
-            email,
-            senha
-        }
-        setCadastro([...cadastro, cadastros]);
-        handleFormReset();
-        alert("Cadastro bem sucedido");
-    }
+    // const handleFazerCadastro = (e) => {
+    //     e.preventDefault();
+    //     let cadastros = {
+    //         nome,
+    //         email,
+    //         senha
+    //     }
+    //     setCadastro([...cadastro, cadastros]);
+    //     handleFormReset();
+    // }
 
 
     return (
@@ -44,8 +63,8 @@ export function TelaDeCadastro() {
                 <div className='image'>
                     <img src="src/img/logo10.png" alt="" />
                 </div>
-                    <h1>Cadastro</h1>
-                    <form onSubmit={handleFazerCadastro} onReset={handleFormReset}>
+                    <h1 className='cadastro'>Cadastro</h1>
+                    <form onSubmit={handleSubmit} onReset={handleFormReset}>
                         <label>Nome</label>
                         <input value={nome} onChange={handleAdicionarNome} placeholder=' Digite seu nome' type="text" />
                         <label>E-mail</label>
@@ -59,7 +78,13 @@ export function TelaDeCadastro() {
                         </datalist>
                                         <label>Senha</label>
                                         <input value={senha} onChange={handleAdicionarSenha} placeholder=' Digite sua senha' type="password" />
+                                        {sucessMessage && (
+                                        <div className="message">
+                                        {sucessMessage}
+                                        </div>
+                                        )}
                                         <button>Cadastrar</button>
+                                        <p className='labelButton'>Já possui cadastro? <a href="/login">Faça login!</a></p>
                                     </form>
                                 </div>
                             </main>
