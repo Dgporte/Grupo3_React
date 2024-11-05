@@ -60,9 +60,7 @@ export function Login() {
               onChange={(e) => setEmail(e.target.value)}
               placeholder=" Digite seu e-mail"
               type="email"
-              list="emails"
             />
-            <datalist id="emails"></datalist>
             <label>Senha</label>
             <input
               value={senha}
