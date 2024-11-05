@@ -22,6 +22,7 @@ export function Login() {
       const response = await api.get("/users", {
         params:{email:email, senha:senha}
       });
+      console.log("reponse", response)
       if(response.status === 200) {
         if(response.data.length === 1) {
           const user = response.data[0];

@@ -1,4 +1,4 @@
-import './finalCompra'
+import './finalCompra.css'
 
 export function FinalCompra () {
     

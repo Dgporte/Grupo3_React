@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { api } from "../api/api";
 import './cadastro.css'
 export function TelaDeCadastro() {
@@ -6,20 +6,10 @@ export function TelaDeCadastro() {
     const [email, setEmail] = useState("")
     const [senha, setSenha] = useState("")
     const [sucessMessage, setSucessMessage] = useState("");
-
-
-
-    useEffect(() => {
-        getAllPosts()
-      }, [])
-
-    const getAllPosts = async () => {
-        const response = await api.get('/users')
-        setNome(response.data)
-      }
-
-      const handleSubmit = async (e) => {
+    
+    const handleSubmit = async (e) => {
         e.preventDefault();
+
         const newUser = {nome, email, senha}
     
         try {
