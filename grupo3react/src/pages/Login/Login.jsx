@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import "./login.css";
- import { api } from "../../api/api";
+import { api } from "../api/api";
 export function Login() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
@@ -10,6 +11,12 @@ export function Login() {
   useEffect(() => {
     getallpost()
   },[])
+
+  const history = useHistory();
+
+  function reloadPage() {
+    window.location.reload();
+  }
 
   const getallpost = async () => {
     const response = await api.get('/users')
@@ -22,14 +29,18 @@ export function Login() {
       const response = await api.get("/users", {
         params:{email:email, senha:senha}
       });
-      console.log("reponse", response)
       if(response.status === 200) {
         if(response.data.length === 1) {
           const user = response.data[0];
           if(user.email === email && user.senha === senha) {
             setSucessMessage("Usuário logado com sucesso!");
-          }
-          else {
+            localStorage.setItem("user", JSON.stringify(user));
+          }       setTimeout(() => {
+            history.push("/");
+            reloadPage();
+        }, 1500);
+          
+        }  else {
             setSucessMessage("Email ou senha inválidos!");
           }
         }
@@ -37,10 +48,10 @@ export function Login() {
           setSucessMessage("Email ou senha inválidos!");
         }
       }
-      else {
-        setSucessMessage("Erro ao logar usuário!");
-      }
-    }
+      // else {
+      //   setSucessMessage("Erro ao logar usuário!");
+      // }
+    
     catch (error) {
       setSucessMessage("Erro ao logar usuário!");
     }
@@ -50,9 +61,6 @@ export function Login() {
     <>
       <main className="main">
         <div className="form">
-          <div className="image">
-            <img src="src/img/logo10.png" alt="" />
-          </div>
           <h1 className="titulo">Login</h1>
           <form onSubmit={handleEnviar}>
             <label>E-mail</label>
