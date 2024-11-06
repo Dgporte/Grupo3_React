@@ -4,6 +4,10 @@
 
 }
 
+.bodyFinalizar {
+    background-color: #181a20;
+}
+
 .mainFinal {
     display: flex;
     width: 50%;
@@ -28,7 +32,7 @@
 .tituloFinal {
     display: flex;
     width: 100%;
-    height: 16.7rem;
+    height: 24.9rem;
     position: absolute;
     top: 0%;
     left: 0%;
@@ -41,66 +45,6 @@
     font-size: 25px;
     top: 5%;
     left: 3%;
-}
-
-
-.cupomFinal1 {
-    display: flex;
-    width: 100%;
-    height: 8rem;
-    position: absolute;
-    top: 56%;
-    border: 2px solid #f3c327;
-    color: white;
-}
-
-.cupomFinal1 h3 {
-    position: absolute;
-    top: 10%;
-    left: 3%;
-
-}
-
-.cupomFinal1 .seuCupomFinal1 {
-    display: flex;
-    position: absolute;
-    top: 30%;
-    left: 3%;
-}
-
-.cupomFinal1 .seuCupomFinal1 .inputFinal1 {
-    background-color: #aaaaac;
-    color: #000000;
-    border-radius: 5px;
-    margin: 10px 0 20px 0;
-    height:  20px; 
-    width: 320px;
-    border: none;
-    transition: border-color 0.7s; 
-}
-
-.cupomFinal1 .seuCupomFinal1 .inputFinal1:hover {
-    border: 2px solid #000000; 
-}
-
-.seuCupomFinal1 .inputFinal1:focus {
-    border: 2px solid #000000; 
-    outline: none;
-}
-
-.cupomFinal1 .seuCupomFinal1 .inputFinal1::placeholder{
-    font-size: 12px;
-}
-
-.cupomFinal1 .seuCupomFinal1 .removerFinal {
-    width: 120px;
-    height: 40px;
-    margin-left: 15px;
-    position: absolute;
-    top: 15%;
-    left: 100%;
-    border-radius: 5px;
-    background-color: #f3c327;
 }
 
 .subtotalFinal {
@@ -125,7 +69,7 @@
 
 .termosFinal {
     display: flex;
-    width: 66.7rem;
+    width: 100%;
     height: 150px;
     flex-direction: column;
     justify-content: center;
@@ -208,7 +152,7 @@
     height: 40px;
     margin-left: 15px;
     position: absolute;
-    top: 119%;
+    top: 116%;
     left: 2.5%;
     border-radius: 5px;
     background-color: #f3c327;
