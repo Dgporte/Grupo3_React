@@ -1,9 +1,81 @@
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useHistory } from "react-router-dom";
+import { api } from "../../api/api";
 import './finalCompra.css'
 
 export function FinalCompra () {
-const [checkSelecionado, setCheckSelecionado] = useState(null);
+    const [checkSelecionado, setCheckSelecionado] = useState(null);
+    const [valorTotal, setValorTotal] = useState("")
+    const [quantidade, setQuantidade] = useState(0)
+    const [pedidos, setPedidos] = useState([])
+    
+
+    useEffect(() => {
+        getPedidos()
+        // getaAllPost()
+    }, [])
+
+    const history = useHistory();
+
+    // const getaAllPost = async () => {
+    //     const response = await api.get('/pedidos')
+    // }
+
+    const getUserId = () => {
+        const id = JSON.parse(localStorage.getItem("user")).id
+        return id;
+    }
+
+    const getPedidos = async() => {
+            const id = getUserId();
+            const response = await api.get("/pedidos");
+            const pedidos = response.data.filter((invoice) => invoice.idUser === id);
+            console.log(pedidos)
+            setPedidos(pedidos);
+    }
+
+    const handleFinalizarCompra = async() => {
+        try {
+            const valorTotal = produto.reduce((total, item) => total + item.preco * item.quantidade, 0);
+            const pedido = { 
+                idUser:"idUsuario",
+                valorTotal:valorTotal,
+                itens:produto.map(item => ({
+                    idProduto:item.id,
+                    quantidade:item.quantidade
+                }))
+            }
+          const response = await api.post('/pedidos', pedido);
+          if (response.status === 201) {
+            alert("Compra realizada com sucesso")
+            history.push('/pedidos');
+          }     
+        } catch (error){
+            alert("Ocorreu um erro")
+        } 
+    }
+
+    const finalizarCompra = async() => {
+        try {
+          const valorTotal = produtos.reduce ((total, item) => total + item.preco * item.quantity,0);
+          const pedido = {
+            idUser:"idUsuario",
+            valorTotal:valorTotal,
+            itens:produtos.map(item => ({
+              idProduto:item.id,
+              quantidade:item.quantity
+            }))
+          };
+          const response = await api.post('/pedidos',pedido);
+          if(response.status === 201) {
+            alert("Redirecionando para finalizar compra!");
+            window.location.href = "/FinalCompra";
+          }
+        }catch(error){
+          alert("Adicione produtos ao carrinho antes de finalizar a compra!");
+        }
+      }
 
 
 const handleCheckbocSelecionado = (index) => {
@@ -12,17 +84,15 @@ const handleCheckbocSelecionado = (index) => {
 
     return (
         <>
-        <main>
+        <body className='bodyFinalizar'>
+            <main>
         <div className='mainFinal'>
         <div className='produtoFinal'>
         <div className='tituloFinal'>
             <h3>Produtos</h3>
-            </div>
-        <div className='cupomFinal1'>
-            <h3>Possui um cupom de desconto ou voucher?</h3>
-            <div className='seuCupomFinal1'>
-            <input className='inputFinal1' placeholder='DIGITE SEU CUPOM' type="text" /> <button className='removerFinal'>REMOVER</button>
-            </div>
+            {pedidos.map((pedido) => {
+                <h1>{pedido.valorTotal}</h1>
+            })}
             </div>
             <div className='subtotalFinal'>
                 <h3>SUBTOTAL</h3> <h3 className='precoFinal'>R$</h3>
@@ -55,6 +125,8 @@ const handleCheckbocSelecionado = (index) => {
             <button className='pagar'>Pagar</button>
         </div>
         </main>
+        </body>
+        
         </>
     )
     
