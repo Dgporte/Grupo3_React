@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import "./login.css";
-import { api } from "../api/api";
+import { api } from "../../api/api";
 export function Login() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
@@ -64,14 +64,14 @@ export function Login() {
           <h1 className="titulo">Login</h1>
           <form onSubmit={handleEnviar}>
             <label>E-mail</label>
-            <input
+            <input className="inputLogin"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder=" Digite seu e-mail"
               type="email"
             />
             <label>Senha</label>
-            <input
+            <input className="inputLogin"
               value={senha}
               onChange={(e) => setSenha(e.target.value)}
               placeholder=" Digite sua senha"

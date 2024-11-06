@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { api } from "../api/api";
+import { api } from "../../api/api";
 import { useHistory } from "react-router-dom";
 import "./cadastro.css";
 
@@ -75,14 +75,14 @@ export function TelaDeCadastro() {
           <h1 className="cadastro">Cadastro</h1>
           <form onSubmit={handleSubmit} onReset={handleFormReset}>
             <label>Nome</label>
-            <input
+            <input className="inputCadastro"
               value={nome}
               onChange={handleAdicionarNome}
               placeholder=" Digite seu nome"
               type="text"
             />
             <label>E-mail</label>
-            <input
+            <input className="inputCadastro"
               value={email}
               onChange={handleAdicionarEmail}
               placeholder=" Digite seu e-mail"
@@ -97,7 +97,7 @@ export function TelaDeCadastro() {
               <option value={`${email}@hotmail.com`} />
             </datalist>
             <label>Senha</label>
-            <input
+            <input className="inputCadastro"
               value={senha}
               onChange={handleAdicionarSenha}
               placeholder=" Digite sua senha"

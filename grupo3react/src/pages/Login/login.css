@@ -20,6 +20,16 @@
     position: absolute;
     top: 25%; 
 }
+.inputLogin {
+    background-color: #1c1c24;
+    color: white;
+    border-radius: 10px;
+    margin: 10px 0 20px 0;
+    height:  40px;
+    width: 350px;
+    border: none;
+    transition: border-color 0.7s; 
+}
 .titulo {
     font-size: 28px;
     display: flex;

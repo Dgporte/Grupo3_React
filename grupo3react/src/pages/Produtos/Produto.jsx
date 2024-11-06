@@ -30,7 +30,7 @@ function Produto() {
   return (
     <body className='bodyProduto'>
     <div className="produto">
-      <input
+      <input className='inputProduto'
         type="text"
         placeholder="Buscar..."
         value={filter}

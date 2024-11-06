@@ -41,7 +41,7 @@
   font-family: Arial, sans-serif;
 }
 
-input[type="text"] {
+.inputProduto {
   background-color: #2a2b30;
   width: 50%;
   max-width: 4000px;
