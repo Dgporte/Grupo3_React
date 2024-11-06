@@ -56,6 +56,7 @@ export function Carrinho() {
     } else {
       alert("Compra finalizada com sucesso!");
       limparCarrinho();
+      window.location.href = "/produtos";
     }
   };
 
@@ -65,79 +66,60 @@ export function Carrinho() {
         <img src="src/img/logo10.png" alt="" />
       </div>
       <div className="form">
-        <div className="form2">
-          <div className="carrinho-container">
-            <h2 className="subtitulo">Carrinho</h2>
-            <ul className="lista">
-              {carrinho.map((item, index) => (
-                <li
-                  key={index}
-                  onClick={() => removerDoCarrinho(item.id)}
-                  style={{
-                    cursor: "pointer",
-                    transition: "background-color 0.2s",
-                  }}
-                  onMouseEnter={(e) =>
-                    (e.currentTarget.style.transform = "scale(1.05)")
-                  }
-                  onMouseLeave={(e) =>
-                    (e.currentTarget.style.transform = "scale(1)")
-                  }
-                >
-                  <div className="item-info">
-                    <h3>{item.nome}</h3>
-                    <p>Preço: R$ {item.preco.toLocaleString()}</p>
-                    <p>
-                      Total: R${" "}
-                      {(item.preco * item.quantidade).toLocaleString()}
-                    </p>
-                  </div>
-                  <div className="quantidade-container">
-                    <input
-                      type="number"
-                      min="1"
-                      value={item.quantidade}
-                      onClick={(e) => e.stopPropagation()}
-                      onChange={(e) =>
-                        atualizarQuantidade(item.id, parseInt(e.target.value))
-                      }
-                      style={{ width: "50px", marginTop: "5px" }}
-                    />
-                  </div>
-                </li>
-              ))}
-            </ul>
-            <div className="total-container">
-              <h3>Total: R$ {calcularTotal().toLocaleString()}</h3>
-            </div>
-            <button
-              className="limpar-carrinho"
-              onClick={limparCarrinho}
-              style={{ cursor: "pointer", transition: "transform 0.2s" }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.transform = "scale(1.05)")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.transform = "scale(1)")
-              }
-            >
-              Limpar Carrinho
-            </button>
-
-            <button
-              className="finalizar-compra"
-              onClick={finalizarCompra}
-              style={{ cursor: "pointer", transition: "transform 0.2s" }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.transform = "scale(1.05)")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.transform = "scale(1)")
-              }
-            >
-              Finalizar Compra
-            </button>
+        <div className="carrinho-container">
+          <h2 className="subtitulo">Carrinho</h2>
+          <ul className="lista">
+            {carrinho.map((item, index) => (
+              <li key={index} onClick={() => removerDoCarrinho(item.id)}>
+                <div className="item-info">
+                  <h3>{item.nome}</h3>
+                  <p>Preço: R$ {item.preco.toLocaleString()}</p>
+                  <p>
+                    Total: R$ {(item.preco * item.quantidade).toLocaleString()}
+                  </p>
+                </div>
+                <div className="quantidade-container">
+                  <input
+                    type="number"
+                    min="1"
+                    value={item.quantidade}
+                    onClick={(e) => e.stopPropagation()}
+                    onChange={(e) =>
+                      atualizarQuantidade(item.id, parseInt(e.target.value))
+                    }
+                    style={{ width: "50px", marginTop: "5px" }}
+                  />
+                </div>
+              </li>
+            ))}
+          </ul>
+          <div className="total-container">
+            <h3 className="total">
+              Total: R$ {calcularTotal().toLocaleString()}
+            </h3>
           </div>
+          <button
+            className="limpar-carrinho"
+            onClick={limparCarrinho}
+            style={{ cursor: "pointer", transition: "transform 0.2s" }}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.transform = "scale(1.05)")
+            }
+            onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+          >
+            Limpar Carrinho
+          </button>
+          <button
+            className="finalizar-compra"
+            onClick={finalizarCompra}
+            style={{ cursor: "pointer", transition: "transform 0.2s" }}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.transform = "scale(1.05)")
+            }
+            onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+          >
+            Finalizar Compra
+          </button>
         </div>
       </div>
     </main>
