@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: #1c1c24;
+    background-color: #181a20;
     height: 100vh;
     background-image: url(img/35aed02cd2e20bc3ce99a55d586eb83d.jpg);
     background-position: 70%;
@@ -27,7 +27,7 @@ body {
     height: 500px;
     width: 400px;
     border: 0.01px solid rgba(255, 255, 255, 0.1);
-    background-color: #1c1c24;
+    background-color: #181a20;
     color: white;
     position: absolute;
     top: 25%; 
