@@ -25,6 +25,11 @@ function Navbar() {
           <img className="imagenb" src={logo} alt=""/>
         </div>
         <ul className="navbar-links">
+        <li>
+            <Link to="/" className="navbar-link">
+              Home
+            </Link>
+          </li>
           <li>
             <Link to="/Produto" className="navbar-link">
               Produtos

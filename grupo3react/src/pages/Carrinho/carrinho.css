@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: #181a20;
+    background-color: #181a20;
     height: 100vh;
     background-position: 70%;
     background-size: cover;
@@ -35,13 +35,41 @@ body {
     padding: 20px;
     border-radius: 10px;
     min-height: 500px;
+    gap: 20px;
+    overflow: hidden;
+
 }
 
 .lista {
-    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style-type: none;
+    margin-top: 100px;
+    max-height: 400px;
     overflow-y: auto;
-    max-height: 300px;
+    overflow-x: hidden;
 }
+
+.lista li {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    border: 2px solid transparent;
+    box-shadow: 0 0 0 2px #e0e0e0;
+    transform-origin: center;
+}
+
+.lista li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 2px #e0e0e0, 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
 
 .total-container {
     margin-top: auto;
@@ -78,16 +106,6 @@ body {
     padding: 0;
 }
 
-.lista li {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 5px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
 .total {
     font-weight: bold;
 }
-
