@@ -3,24 +3,13 @@
     margin: 0;
 }
 
-body {
-    background-color: #1c1c24;
-    height: 100vh;
-    background-image: url(img/35aed02cd2e20bc3ce99a55d586eb83d.jpg);
-    background-position: 70%;
-    background-size: cover;
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.main{
+.main90{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.form {
+.formulario13 {
     display: flex;
     align-items: center;
     border-radius: 20px;
@@ -33,7 +22,7 @@ body {
     top: 25%; 
 }
 
-.cadastro {
+.cadastro12 {
     font-size: 28px;
     display: flex;
     position: absolute;
@@ -41,7 +30,7 @@ body {
     left: 33%;
 }
 
-form {
+.formCadastro {
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -50,7 +39,7 @@ form {
     left: 1%;
 }
 
-.image {
+.image3 {
     display: flex;
     height: 65px;
     position: absolute;
@@ -58,7 +47,7 @@ form {
     left: 15%; 
 }
 
-input {
+.inputCadastro {
     background-color: #1c1c24;
     color: white;
     border-radius: 10px;
@@ -69,21 +58,21 @@ input {
     transition: border-color 0.7s; 
 }
 
-input:hover {
+.inputCadastro:hover {
     border: 2px solid #f3c327; 
 }
 
-input:focus {
+.inputCadastro:focus {
     border: 2px solid #f3c327; 
     outline: none;
 }
 
-input::placeholder{
+.inputCadastro::placeholder{
     font-size: 18px;
 }
 
 
-button {
+.buttonCadastro {
     background-color: #f3c327;
     border-radius: 10px;
     font-size: 20px;
@@ -94,7 +83,7 @@ button {
     height: 40px;
 }
 
-.labelButton {
+.labelButton11 {
     margin-left: 50px;
 }
 

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { api } from "../api/api";
+import { api } from "../../api/api";
 import './cadastro.css'
 import Login from './Login';
 export function TelaDeCadastro() {
@@ -46,17 +46,17 @@ export function TelaDeCadastro() {
 
     return (
         <>
-            <main className='main'>
-                <div className='form'>
-                <div className='image'>
+            <main className='main90'>
+                <div className='formulario13'>
+                <div className='image3'>
                     <img src="src/img/logo10.png" alt="" />
                 </div>
-                    <h1 className='cadastro'>Cadastro</h1>
-                    <form onSubmit={handleSubmit} onReset={handleFormReset}>
+                    <h1 className='cadastro12'>Cadastro</h1>
+                    <form className='formCadastro' onSubmit={handleSubmit} onReset={handleFormReset}>
                         <label>Nome</label>
-                        <input value={nome} onChange={handleAdicionarNome} placeholder=' Digite seu nome' type="text" />
+                        <input className='inputCadastro' value={nome} onChange={handleAdicionarNome} placeholder=' Digite seu nome' type="text" />
                         <label>E-mail</label>
-                        <input value={email} onChange={handleAdicionarEmail} placeholder=' Digite seu e-mail' type="email" list="emails"/>
+                        <input className='inputCadastro' value={email} onChange={handleAdicionarEmail} placeholder=' Digite seu e-mail' type="email" list="emails"/>
                         <datalist id="emails">
                             <option value={`${email}@gmail.com`}/>
                             <option value={`${email}@yahoo.com`}/>
@@ -65,14 +65,14 @@ export function TelaDeCadastro() {
                             <option value={`${email}@hotmail.com`}/>
                         </datalist>
                         <label>Senha</label>
-                        <input value={senha} onChange={handleAdicionarSenha} placeholder=' Digite sua senha' type="password" />
+                        <input className='inputCadastro' value={senha} onChange={handleAdicionarSenha} placeholder=' Digite sua senha' type="password" />
                         {sucessMessage && (
                         <div className="message">
                         {sucessMessage}
                         </div>
                         )}
-                        <button>Cadastrar</button>
-                        <p className='labelButton'>Já possui cadastro? <a href="/login">Faça login!</a></p>
+                        <button className='buttonCadastro'>Cadastrar</button>
+                        <p className='labelButton11'>Já possui cadastro? <a href="/login">Faça login!</a></p>
                                     </form>
                                 </div>
                             </main>

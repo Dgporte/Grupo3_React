@@ -13,31 +13,31 @@ const handleCheckbocSelecionado = (index) => {
     return (
         <>
         <main>
-        <div className='main'>
-        <div className='produto'>
-        <div className='titulo'>
+        <div className='mainFinal'>
+        <div className='produtoFinal'>
+        <div className='tituloFinal'>
             <h3>Produtos</h3>
             </div>
-        <div className='cupom'>
+        <div className='cupomFinal1'>
             <h3>Possui um cupom de desconto ou voucher?</h3>
-            <div className='seuCupom'>
-            <input placeholder='DIGITE SEU CUPOM' type="text" /> <button className='remover'>REMOVER</button>
+            <div className='seuCupomFinal1'>
+            <input className='inputFinal1' placeholder='DIGITE SEU CUPOM' type="text" /> <button className='removerFinal'>REMOVER</button>
             </div>
             </div>
-            <div className='subtotal'>
-                <h3>SUBTOTAL</h3> <h3 className='preco'>R$</h3>
+            <div className='subtotalFinal'>
+                <h3>SUBTOTAL</h3> <h3 className='precoFinal'>R$</h3>
             </div>
         </div>
-        <div className='termos'>
+        <div className='termosFinal'>
             <h4>Informações importantes:</h4>
             <p>• Todos os itens são entregues apenas de forma digital por download ou créditos direto na conta e estão sujeitos à política de reembolso.</p>
             <p>• Verifique os requisitos de sistema na página de cada moeda e os Termos de Uso antes de realizar a compra.</p>
             <p>• Alguns itens possuem limite temporário de compra e podem levar em torno de 2 dias para poder fazer uma nova compra do mesmo item.</p>
             </div>
         </div>
-        <div className='pagamento'>
-            <div className='opcoes'><h3>Formas de pagamento</h3></div>
-            <div className='cartaoDeb'><input className='input' checked={checkSelecionado === 0} onChange={() => handleCheckbocSelecionado(0)} type="checkbox" /><p>Cartao de Credito</p>
+        <div className='pagamentoFinal'>
+            <div className='opcoesFinal'><h3>Formas de pagamento</h3></div>
+            <div className='cartaoDeb'><input className='inputFinal2' checked={checkSelecionado === 0} onChange={() => handleCheckbocSelecionado(0)} type="checkbox" /><p>Cartao de Credito</p>
                 <img className='mastercard1' src="src/img/mastercard-3.jpg" alt="" />
                 <img className='visa1' src="src/img/visa.jpg" alt="" />
             </div>
@@ -51,7 +51,7 @@ const handleCheckbocSelecionado = (index) => {
             <div className='boleto'><input className='input' checked={checkSelecionado === 3} onChange={() => handleCheckbocSelecionado(3)} type="checkbox" /><p>Boleto</p>
                 <img src="src/img/boleto-logo.png" alt="" />
             </div>
-            <div className='finalizar'><h3 className='valorT'>Valor Total</h3> <h3 className='real'>R$</h3></div>
+            <div className='finalizarFinal'><h3 className='valorT'>Valor Total</h3> <h3 className='real'>R$</h3></div>
             <button className='pagar'>Pagar</button>
         </div>
         </main>
