@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import "./login.css";
-import { api } from "../api/api";
+import { api } from "../../api/api";
 export function Login() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");

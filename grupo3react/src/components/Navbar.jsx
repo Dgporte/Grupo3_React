@@ -25,7 +25,7 @@ export function Navbar() {
         </div>
         <ul className="navbar-links">
           <li>
-            <Link to="/produtos" className="navbar-link">
+            <Link to="/Produto" className="navbar-link">
               Produtos
             </Link>
           </li>

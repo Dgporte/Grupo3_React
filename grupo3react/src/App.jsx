@@ -10,6 +10,7 @@ import { Carrinho } from './pages/Carrinho/Carrinho'
 import { FinalCompra } from './pages/Finalizar/FinalCompra'
 import { Login } from "./pages/Login/Login"
 import Navbar from './components/Navbar'
+import { Home } from './pages/Home/home';
 
 function App() {
 
@@ -19,7 +20,7 @@ function App() {
     <BrowserRouter>
     <Navbar />
     <Switch>
-      {/* <Route exact path='/TelaDeCadastro' component={TelaDeCadastro}/> */}
+      <Route exact path='/' component={Home} />
       <Route exact path='/Produto' component={Produto} />
       <Route path='/categoria/:categoria' component={CategoriaDetalhe} />
       <Route exact path='/TelaDeCadastro' component={TelaDeCadastro}/>    
