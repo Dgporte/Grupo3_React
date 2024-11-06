@@ -43,6 +43,11 @@ function Navbar() {
           {user ? (
           <li>
             <div className="user-profile">
+            <li>
+            <Link to="/Historico" className="navbar-link">
+              Historico
+            </Link>
+          </li>
               <button onClick={handleLogout}>Logout</button>
               <img src={user.imgurl || "./src/assets/fotousuariosemfundo.png"} alt="Foto do usuário" className="profile-img" />
             </div>

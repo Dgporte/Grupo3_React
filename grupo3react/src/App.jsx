@@ -27,6 +27,7 @@ function App() {
       <Route exact path="/Login" component={Login}/>
       <Route exact path='/Carrinho' component={Carrinho}/>
       <Route path="/produto/:id" component={DescricaoProdutos} />
+      <Route exact path='/Historico' component={Historico}/>
     </Switch>
     </BrowserRouter>
     </>

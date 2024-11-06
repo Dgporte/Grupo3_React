@@ -1,0 +1,65 @@
+body {
+    background-color: #181a20;
+    height: 100vh;
+    background-image: url(img/35aed02cd2e20bc3ce99a55d586eb83d.jpg);
+    background-position: 70%;
+    background-size: cover;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.mainHistorico {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.tituloHistorico {
+    color: white;
+    margin-top: 20px;
+}
+.linhaHistorico {
+    width: 99.9%;
+    border: 0.01px solid rgba(255, 255, 255, 0.1);
+    margin-top: 0;
+    border-top: 0;
+}
+.nomeTitulo {
+    color: white;
+    display: flex;
+    justify-content: center;
+    width: 95%;
+    align-items: center;
+    gap: 18rem;
+}
+.containerHistorico {
+    display: flex;
+    align-items: center;
+    width: 95%;
+    border: 0.01px solid #f3c327;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    overflow: auto;
+    height: 75vh;
+    flex-direction: column;
+}
+.itemHistorico {
+    display: flex;
+    /* gap: 40px; */
+    justify-content: center;
+    width: 95%;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20rem;
+}
+.itemHistorico ul {
+    list-style-type: none;
+}
+.valorHistorico {
+    margin-left: 20px;
+}
+.pedidoHistorico {
+    margin-left: 50px;
+}
