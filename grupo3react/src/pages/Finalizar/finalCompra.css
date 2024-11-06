@@ -1,10 +1,10 @@
 * {
     margin: 0;
     padding: 0;
+
 }
 
-
-.main {
+.mainFinal {
     display: flex;
     width: 50%;
     height: 45rem;
@@ -14,7 +14,7 @@
     top:20%;
 }
 
-.produto {
+.produtoFinal {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -25,7 +25,7 @@
     color: white;
 }
 
-.titulo {
+.tituloFinal {
     display: flex;
     width: 100%;
     height: 16.7rem;
@@ -36,7 +36,7 @@
     color: white;
 }
 
-.titulo h3 {
+.tituloFinal h3 {
     position: absolute;
     font-size: 25px;
     top: 5%;
@@ -44,7 +44,7 @@
 }
 
 
-.cupom {
+.cupomFinal1 {
     display: flex;
     width: 100%;
     height: 8rem;
@@ -54,56 +54,56 @@
     color: white;
 }
 
-.cupom h3 {
+.cupomFinal1 h3 {
     position: absolute;
     top: 10%;
     left: 3%;
 
 }
 
-.seuCupom {
+.cupomFinal1 .seuCupomFinal1 {
     display: flex;
     position: absolute;
     top: 30%;
     left: 3%;
 }
 
-.seuCupom input {
+.cupomFinal1 .seuCupomFinal1 .inputFinal1 {
     background-color: #aaaaac;
     color: #000000;
     border-radius: 5px;
     margin: 10px 0 20px 0;
-    height:  40px; 
+    height:  20px; 
     width: 320px;
     border: none;
     transition: border-color 0.7s; 
 }
 
-input:hover {
+.cupomFinal1 .seuCupomFinal1 .inputFinal1:hover {
     border: 2px solid #000000; 
-}s
+}
 
-input:focus {
+.seuCupomFinal1 .inputFinal1:focus {
     border: 2px solid #000000; 
     outline: none;
 }
 
-input::placeholder{
+.cupomFinal1 .seuCupomFinal1 .inputFinal1::placeholder{
     font-size: 12px;
 }
 
-.remover {
+.cupomFinal1 .seuCupomFinal1 .removerFinal {
     width: 120px;
     height: 40px;
     margin-left: 15px;
     position: absolute;
-    top: 8%;
+    top: 15%;
     left: 100%;
     border-radius: 5px;
     background-color: #f3c327;
 }
 
-.subtotal {
+.subtotalFinal {
     display: flex;
     width: 100%;
     height: 5rem;
@@ -113,17 +113,17 @@ input::placeholder{
     color: white;
 }
 
-.subtotal h3 {
+.subtotalFinal h3 {
     position: absolute;
     top: 30%;
     left: 3%;
 }
 
-.preco {
+.precoFinal {
     margin-left: 850px;
 }
 
-.termos {
+.termosFinal {
     display: flex;
     width: 66.7rem;
     height: 150px;
@@ -136,18 +136,18 @@ input::placeholder{
     color: white;
 }
 
-.termos h4 {
+.termosFinal h4 {
     position: absolute;
     top: 10%;
     left: 3%;
 } 
 
-.termos p {
+.termosFinal p {
     font-size: 14px;
     margin-left: 30px;
 }
 
-.pagamento {
+.pagamentoFinal {
     display: flex;
     width: 30%;
     height: 30rem;
@@ -156,21 +156,21 @@ input::placeholder{
     top:20%;
 }
 
-.pagamento p {
+.pagamentoFinal p {
     position: absolute;
     top: 3%;
     left: 5%;
     font-size: 20px;
 }
 
-.input {
+.inputFinal2 {
     width: 10px;
     height: 10px;
     position: absolute;
     left: 1%;   
 }
 
-.opcoes {
+.opcoesFinal {
     display: flex;
     width: 100%;
     height: 39.3rem;
@@ -180,7 +180,7 @@ input::placeholder{
     color: white;
 }
 
-.finalizar {
+.finalizarFinal {
     display: flex;
     width: 100%;
     height: 7.8rem;

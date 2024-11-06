@@ -3,12 +3,12 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import './App.css'
-import { TelaDeCadastro } from './pages/TelaDeCadastro'
+import { TelaDeCadastro } from './pages/Login/TelaDeCadastro'
 import Produto from './pages/Produtos/Produto'
 import CategoriaDetalhe from "./pages/Produtos/CategoriaDetalhe";
-import { Carrinho } from './pages/Carrinho'
-import { FinalCompra } from './pages/finalCompra'
-import { Login } from "./pages/Login"
+import { Carrinho } from './pages/Carrinho/Carrinho'
+import { FinalCompra } from './pages/Finalizar/FinalCompra'
+import { Login } from "./pages/Login/Login"
 
 function App() {
 
@@ -17,7 +17,7 @@ function App() {
 
     <BrowserRouter>
     <Switch>
-      <Route exact path='/TelaDeCadastro' component={TelaDeCadastro}/>
+      {/* <Route exact path='/TelaDeCadastro' component={TelaDeCadastro}/> */}
       <Route exact path='/Produto' component={Produto} />
       <Route path='/categoria/:categoria' component={CategoriaDetalhe} />
       <Route exact path='/TelaDeCadastro' component={TelaDeCadastro}/>    

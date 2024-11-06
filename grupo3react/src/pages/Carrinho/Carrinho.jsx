@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./carrinho.css";
 import { useContext } from "react";
-import { GeralContext } from "../context/GeralContext";
+import { GeralContext } from "../../context/GeralContext";
 
 export function Carrinho() {
   const { produtos, setProdutos, carrinho, setCarrinho } =
