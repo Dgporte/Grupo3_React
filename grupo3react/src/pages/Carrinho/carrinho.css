@@ -41,9 +41,14 @@ body {
 }
 
 .lista {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     list-style-type: none;
-    padding: 0;
-    margin: 0;
+    margin-top: 100px;
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .lista li {
@@ -54,13 +59,17 @@ body {
     margin-bottom: 10px;
     transition: transform 0.2s, box-shadow 0.2s;
     cursor: pointer;
-    border: 2px solid #e0e0e0;
+    border: 2px solid transparent;
+    box-shadow: 0 0 0 2px #e0e0e0;
+    transform-origin: center;
 }
 
 .lista li:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 0 2px #e0e0e0, 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
+
 
 .total-container {
     margin-top: auto;
