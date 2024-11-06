@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { api } from "../api/api";
 import './cadastro.css'
+import Login from './Login';
 export function TelaDeCadastro() {
     const [nome, setNome] = useState("")
     const [email, setEmail] = useState("")
@@ -24,8 +25,6 @@ export function TelaDeCadastro() {
         }
       }
 
-
-
     const handleAdicionarNome = (e) => {
         setNome(e.target.value);
     }
@@ -36,6 +35,7 @@ export function TelaDeCadastro() {
 
     const handleAdicionarSenha = (e) => {
         setSenha(e.target.value);
+        
     }
 
     const handleFormReset = () => {
@@ -43,18 +43,6 @@ export function TelaDeCadastro() {
         setEmail('');
         setSenha('');
     }
-
-    // const handleFazerCadastro = (e) => {
-    //     e.preventDefault();
-    //     let cadastros = {
-    //         nome,
-    //         email,
-    //         senha
-    //     }
-    //     setCadastro([...cadastro, cadastros]);
-    //     handleFormReset();
-    // }
-
 
     return (
         <>
@@ -76,15 +64,15 @@ export function TelaDeCadastro() {
                             <option value={`${email}@outlook.com`}/>
                             <option value={`${email}@hotmail.com`}/>
                         </datalist>
-                                        <label>Senha</label>
-                                        <input value={senha} onChange={handleAdicionarSenha} placeholder=' Digite sua senha' type="password" />
-                                        {sucessMessage && (
-                                        <div className="message">
-                                        {sucessMessage}
-                                        </div>
-                                        )}
-                                        <button>Cadastrar</button>
-                                        <p className='labelButton'>Já possui cadastro? <a href="/login">Faça login!</a></p>
+                        <label>Senha</label>
+                        <input value={senha} onChange={handleAdicionarSenha} placeholder=' Digite sua senha' type="password" />
+                        {sucessMessage && (
+                        <div className="message">
+                        {sucessMessage}
+                        </div>
+                        )}
+                        <button>Cadastrar</button>
+                        <p className='labelButton'>Já possui cadastro? <a href="/login">Faça login!</a></p>
                                     </form>
                                 </div>
                             </main>

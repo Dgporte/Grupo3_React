@@ -1,0 +1,315 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+.main {
+    display: flex;
+    width: 50%;
+    height: 45rem;
+    border: #f3c327;
+    position: absolute;
+    left: 10%;
+    top:20%;
+}
+
+.produto {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 30rem;
+    position: absolute;
+    top: 0%;
+    border: #f3c327;
+    color: white;
+}
+
+.titulo {
+    display: flex;
+    width: 100%;
+    height: 16.7rem;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    border: 2px solid #f3c327;
+    color: white;
+}
+
+.titulo h3 {
+    position: absolute;
+    font-size: 25px;
+    top: 5%;
+    left: 3%;
+}
+
+
+.cupom {
+    display: flex;
+    width: 100%;
+    height: 8rem;
+    position: absolute;
+    top: 56%;
+    border: 2px solid #f3c327;
+    color: white;
+}
+
+.cupom h3 {
+    position: absolute;
+    top: 10%;
+    left: 3%;
+
+}
+
+.seuCupom {
+    display: flex;
+    position: absolute;
+    top: 30%;
+    left: 3%;
+}
+
+.seuCupom input {
+    background-color: #aaaaac;
+    color: #000000;
+    border-radius: 5px;
+    margin: 10px 0 20px 0;
+    height:  40px; 
+    width: 320px;
+    border: none;
+    transition: border-color 0.7s; 
+}
+
+input:hover {
+    border: 2px solid #000000; 
+}s
+
+input:focus {
+    border: 2px solid #000000; 
+    outline: none;
+}
+
+input::placeholder{
+    font-size: 12px;
+}
+
+.remover {
+    width: 120px;
+    height: 40px;
+    margin-left: 15px;
+    position: absolute;
+    top: 8%;
+    left: 100%;
+    border-radius: 5px;
+    background-color: #f3c327;
+}
+
+.subtotal {
+    display: flex;
+    width: 100%;
+    height: 5rem;
+    position: absolute;
+    top: 83%;
+    border: 2px solid #f3c327;
+    color: white;
+}
+
+.subtotal h3 {
+    position: absolute;
+    top: 30%;
+    left: 3%;
+}
+
+.preco {
+    margin-left: 850px;
+}
+
+.termos {
+    display: flex;
+    width: 66.7rem;
+    height: 150px;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    left: 0%;
+    top: 66.7%;
+    border: 2px solid #f3c327;
+    color: white;
+}
+
+.termos h4 {
+    position: absolute;
+    top: 10%;
+    left: 3%;
+} 
+
+.termos p {
+    font-size: 14px;
+    margin-left: 30px;
+}
+
+.pagamento {
+    display: flex;
+    width: 30%;
+    height: 30rem;
+    position: absolute;
+    left: 65%;
+    top:20%;
+}
+
+.pagamento p {
+    position: absolute;
+    top: 3%;
+    left: 5%;
+    font-size: 20px;
+}
+
+.input {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: 1%;   
+}
+
+.opcoes {
+    display: flex;
+    width: 100%;
+    height: 39.3rem;
+    justify-content: center;
+    position: absolute;
+    border: 2px solid #f3c327;
+    color: white;
+}
+
+.finalizar {
+    display: flex;
+    width: 100%;
+    height: 7.8rem;
+    justify-content: center;
+    position: absolute;
+    top: 105%;
+    border: 2px solid #f3c327;
+    color: white;
+}
+
+.valorT {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+}
+
+.real {
+    position: absolute;
+    top: 20%;
+    left: 75%;
+}
+
+.pagar {
+    width: 580px;
+    height: 40px;
+    margin-left: 15px;
+    position: absolute;
+    top: 119%;
+    left: 2.5%;
+    border-radius: 5px;
+    background-color: #f3c327;
+}
+
+.cartaoDeb{
+    display: flex;
+    width: 100%;
+    height: 7.2rem;
+    position: absolute;
+    top: 8.2%;
+    left: 0%;
+    border: 2px solid #f3c327;
+    color: white;
+}
+
+.cartaoDeb img {
+    width: 50px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+.mastercard1 {
+    position: absolute;
+    top: 60%;
+    left: 12%;
+}
+
+.visa1 {
+    position: absolute;
+    top: 60%;
+    left: 3%;
+}
+
+.cartaoCre {
+    display: flex;
+    width: 100%;
+    height: 7.2rem;
+    position: absolute;
+    top: 32.5%;
+    left: 0%;
+    border: 2px solid #f3c327;
+    color: white;
+}
+
+.cartaoCre img {
+    width: 50px;
+    height: 30px;
+    border-radius: 10px;
+
+}
+
+.mastercard2{
+    position: absolute;
+    top: 60%;
+    left: 12%;
+}
+
+.visa2 {
+    position: absolute;
+    top: 60%;
+    left: 3%;
+}
+
+.pix {
+    display: flex;
+    width: 100%;
+    height: 7.2rem;
+    position: absolute;
+    top: 57%;
+    left: 0%;
+    border: 2px solid #f3c327;
+    color: white;
+}
+
+.pix img {
+    width: 50px;
+    height: 30px;
+    border-radius: 10px;
+    position: absolute;
+    top: 60%;
+    left: 3%;
+}
+
+.boleto {
+    display: flex;
+    width: 100%;
+    height: 7.2rem;
+    position: absolute;
+    top: 81%;
+    left: 0%;
+    border: 2px solid #f3c327;
+    color: white;
+}
+
+
+.boleto img {
+    width: 50px;
+    height: 30px;
+    border-radius: 10px;
+    position: absolute;
+    top: 60%;
+    left: 3%;
+}
