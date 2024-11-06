@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Poppins&display=swap');
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1c1c24;
+  margin: 0;
+  padding: 0;
+  background-image: url('https://cdn.discordapp.com/attachments/1279208995139223656/1303504674246099025/image.png?ex=672bfed4&is=672aad54&hm=1720d35eea5adb9cc53916987ac40bd01761c960d73044cf9f6e21129b4c4057&');
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-size: cover; 
+  background-position: center; 
+
+}
+
+.produto, .categoria-detalhe {
+  width: 80%;
+  margin: 0 auto;
+  padding: 10px;
+  background-image: linear-gradient(to right, #1c1c24, #46431c);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px #ffee03c7;
+  background-size: cover;
+}
+
+.produto h1 {
+  text-align: center;
+  color: #000000;
+}
+
+.categoria-detalhe h1 {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #2a2b30;
+  color: white; /* Cor da letra */
+  border-radius: 8px;
+  box-shadow: 0 2px 2px rgba(255, 238, 3, 0.78);
+  background-size: cover;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+input[type="text"] {
+  background-color: #2a2b30;
+  width: 50%;
+  max-width: 4000px;
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 30px;
+  border: 1px solid #f3c327;
+  display: block;
+}
+
+.produto-categorias a {
+  display: inline-block;
+  margin: 5px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background-color: #f3c327;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.produto-lista {
+  margin-top: 3%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; 
+  justify-content: center; 
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 80%;
+}
+
+.produto-card {
+  text-decoration: none; 
+  color: inherit;
+  background-color: #2a2b30;
+  border: 1px solid #f3c327;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+  min-height: 22rem;
+}
+
+.produto-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.produto-card h2 {
+  margin: 10px 0;
+  color: #d1cec4;
+}
+
+.produto-card p {
+  color: #d1cec4;
+}
+
+.produto-info {
+  margin-top: 15px;
+  text-align: left;
+  color: #d1cec4;
+}
+
+.produto-descricao {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.produto-categoria, .produto-preco, .produto-estoque {
+  margin: 5px 0;
+}
