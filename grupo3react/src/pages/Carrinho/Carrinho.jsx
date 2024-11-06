@@ -46,9 +46,15 @@ export function Carrinho() {
       alert("Adicione produtos ao carrinho antes de finalizar a compra!");
     } else {
       alert("Compra finalizada com sucesso!");
-      limparCarrinho();
-      window.location.href = "/produto";
+      setTimeout(() => {
+        window.location.href = "/produto";
+        limparCarrinho();
+      }, 1500);
     }
+  };
+
+  const removerProduto = (id) => {
+    setCarrinho(carrinho.filter(item => item.id !== id));
   };
 
   useEffect(() => {
@@ -68,7 +74,16 @@ export function Carrinho() {
           ) : (
             <ul className="lista">
               {produtosDetalhados.map((item, index) => (
-                <li key={index}>
+                <li
+                  key={index}
+                  onClick={() => removerProduto(item.id)}
+                  style={{
+                    cursor: "pointer",
+                    transition: "transform 0.2s",
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+                >
                   <div className="item-info">
                     <h3>{item.nome}</h3>
                     <p>Preço: R$ {item.preco.toFixed(2)}</p>
@@ -95,9 +110,9 @@ export function Carrinho() {
             onClick={limparCarrinho}
             style={{ cursor: "pointer", transition: "transform 0.2s" }}
             onMouseEnter={(e) =>
-              (e.currentTarget.style.transform = "scale(1.05)")
-            }
-            onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+              (e.currentTarget.style.transform = "scale(1.05)")}
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.transform = "scale(1)")}
           >
             Limpar Carrinho
           </button>
@@ -107,9 +122,9 @@ export function Carrinho() {
             onClick={finalizarCompra}
             style={{ cursor: "pointer", transition: "transform 0.2s" }}
             onMouseEnter={(e) =>
-              (e.currentTarget.style.transform = "scale(1.05)")
-            }
-            onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+              (e.currentTarget.style.transform = "scale(1.05)")}
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.transform = "scale(1)")}
           >
             Finalizar Compra
           </button>

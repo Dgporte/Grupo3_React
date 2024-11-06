@@ -35,12 +35,31 @@ body {
     padding: 20px;
     border-radius: 10px;
     min-height: 500px;
+    gap: 20px;
+    overflow: hidden;
+
 }
 
 .lista {
-    flex-grow: 1;
-    overflow-y: auto;
-    max-height: 300px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lista li {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    border: 2px solid #e0e0e0;
+}
+
+.lista li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .total-container {
@@ -76,15 +95,6 @@ body {
 .lista {
     list-style-type: none;
     padding: 0;
-}
-
-.lista li {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 5px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
 }
 
 .total {
