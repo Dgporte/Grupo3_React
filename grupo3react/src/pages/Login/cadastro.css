@@ -58,7 +58,7 @@ form {
     left: 15%; 
 }
 
-input {
+.inputCadastro {
     background-color: #1c1c24;
     color: white;
     border-radius: 10px;

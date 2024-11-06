@@ -1,15 +1,32 @@
-import { createContext, useState } from "react";
+import React, { createContext, useState } from 'react';
 
-const GeralContext = createContext({});
+export const GeralContext = createContext();
 
-const GeralProvider = ({ children }) => {
-  const [carrinho, setCarrinho] = useState([]);
+export const GeralProvider = ({ children }) => {
+    const [carrinho, setCarrinho] = useState([]);
 
-  return (
-    <GeralContext.Provider value={{ carrinho, setCarrinho }}>
-      {children}
-    </GeralContext.Provider>
-  );
+    const adicionarAoCarrinho = (produto) => {
+        const produtoExistente = carrinho.find(item => item.id === produto);
+
+        if (produtoExistente) {
+            setCarrinho((prevCarrinho) =>
+                prevCarrinho.map((item) =>
+                    item.id === produto
+                        ? { ...item, quantidade: item.quantidade + 1 }
+                        : item
+                )
+            );
+        } else {
+            setCarrinho((prevCarrinho) => [
+                ...prevCarrinho,
+                { id: produto, quantidade: 1 }
+            ]);
+        }
+    };
+
+    return (
+        <GeralContext.Provider value={{ carrinho, setCarrinho, adicionarAoCarrinho }}>
+            {children}
+        </GeralContext.Provider>
+    );
 };
-
-export { GeralContext, GeralProvider };

@@ -10,6 +10,7 @@ import { Carrinho } from './pages/Carrinho/Carrinho'
 import { Login } from "./pages/Login/Login"
 import Navbar from './components/Navbar'
 import { Home } from './pages/Home/home';
+import { DescricaoProdutos } from './pages/Descricao/DescricaoProduto';
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
       <Route exact path='/TelaDeCadastro' component={TelaDeCadastro}/>    
       <Route exact path="/Login" component={Login}/>
       <Route exact path='/Carrinho' component={Carrinho}/>
+      <Route path="/produto/:id" component={DescricaoProdutos} />
     </Switch>
     </BrowserRouter>
     </>

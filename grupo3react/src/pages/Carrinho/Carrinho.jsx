@@ -1,52 +1,43 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "./carrinho.css";
-import { useContext } from "react";
 import { GeralContext } from "../../context/GeralContext";
+import { api } from "../../api/api";
 
 export function Carrinho() {
-  const { produtos, setProdutos, carrinho, setCarrinho } =
-    useContext(GeralContext);
+  const { carrinho, setCarrinho } = useContext(GeralContext);
+  const [produtosDetalhados, setProdutosDetalhados] = useState([]);
+  const [erro, setErro] = useState(null);
 
-  const removerDoCarrinho = (produtoId) => {
-    const produtoRemovido = carrinho.find((item) => item.id === produtoId);
-    setCarrinho(carrinho.filter((item) => item.id !== produtoId));
-    setProdutos(
-      produtos.map((item) =>
-        item.id === produtoId
-          ? {
-              ...item,
-              quantidade: item.quantidade + produtoRemovido.quantidade,
-            }
-          : item
-      )
-    );
-  };
-
-  const atualizarQuantidade = (produtoId, novaQuantidade) => {
-    setCarrinho(
-      carrinho.map((item) =>
-        item.id === produtoId ? { ...item, quantidade: novaQuantidade } : item
-      )
-    );
-  };
+  useEffect(() => {
+    if (carrinho.length === 0) {
+      setProdutosDetalhados([]);
+    } else {
+      const fetchProdutosDetalhados = async () => {
+        try {
+          const detalhes = await Promise.all(
+            carrinho.map(async (item) => {
+              const response = await api.get(`/produtos/${item.id}`);
+              return { ...response.data, quantidade: item.quantidade };
+            })
+          );
+          setProdutosDetalhados(detalhes.filter(Boolean));
+        } catch (error) {
+          console.error("Erro ao buscar detalhes dos produtos:", error);
+          setErro("Falha ao carregar os produtos. Tente novamente mais tarde.");
+        }
+      };
+      fetchProdutosDetalhados();
+    }
+  }, [carrinho]);
 
   const calcularTotal = () => {
-    return carrinho.reduce(
+    return produtosDetalhados.reduce(
       (acc, item) => acc + item.preco * item.quantidade,
       0
     );
   };
 
   const limparCarrinho = () => {
-    carrinho.forEach((item) => {
-      setProdutos((prevProdutos) =>
-        prevProdutos.map((produto) =>
-          produto.id === item.id
-            ? { ...produto, quantidade: produto.quantidade + item.quantidade }
-            : produto
-        )
-      );
-    });
     setCarrinho([]);
   };
 
@@ -56,48 +47,49 @@ export function Carrinho() {
     } else {
       alert("Compra finalizada com sucesso!");
       limparCarrinho();
-      window.location.href = "/produtos";
+      window.location.href = "/produto";
     }
   };
 
+  useEffect(() => {
+    console.log("Carrinho após limpeza:", carrinho);
+  }, [carrinho]);
+
   return (
     <main className="main">
-      <div className="imagem">
-        <img src="src/img/logo10.png" alt="" />
-      </div>
       <div className="form">
         <div className="carrinho-container">
           <h2 className="subtitulo">Carrinho</h2>
-          <ul className="lista">
-            {carrinho.map((item, index) => (
-              <li key={index} onClick={() => removerDoCarrinho(item.id)}>
-                <div className="item-info">
-                  <h3>{item.nome}</h3>
-                  <p>Preço: R$ {item.preco.toLocaleString()}</p>
-                  <p>
-                    Total: R$ {(item.preco * item.quantidade).toLocaleString()}
-                  </p>
-                </div>
-                <div className="quantidade-container">
-                  <input
-                    type="number"
-                    min="1"
-                    value={item.quantidade}
-                    onClick={(e) => e.stopPropagation()}
-                    onChange={(e) =>
-                      atualizarQuantidade(item.id, parseInt(e.target.value))
-                    }
-                    style={{ width: "50px", marginTop: "5px" }}
-                  />
-                </div>
-              </li>
-            ))}
-          </ul>
+
+          {erro && <div className="erro">{erro}</div>}
+
+          {produtosDetalhados.length === 0 ? (
+            <p>Carrinho vazio. Adicione produtos para continuar.</p>
+          ) : (
+            <ul className="lista">
+              {produtosDetalhados.map((item, index) => (
+                <li key={index}>
+                  <div className="item-info">
+                    <h3>{item.nome}</h3>
+                    <p>Preço: R$ {item.preco.toFixed(2)}</p>
+                    <p>
+                      Total: R$ {(item.preco * item.quantidade).toFixed(2)}
+                    </p>
+                  </div>
+                  <div className="quantidade-container">
+                    <p>Quantidade: {item.quantidade}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
+
           <div className="total-container">
             <h3 className="total">
-              Total: R$ {calcularTotal().toLocaleString()}
+              Total: R$ {calcularTotal().toFixed(2)}
             </h3>
           </div>
+
           <button
             className="limpar-carrinho"
             onClick={limparCarrinho}
@@ -109,6 +101,7 @@ export function Carrinho() {
           >
             Limpar Carrinho
           </button>
+
           <button
             className="finalizar-compra"
             onClick={finalizarCompra}
