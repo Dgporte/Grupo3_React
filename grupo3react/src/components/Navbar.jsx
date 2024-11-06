@@ -1,8 +1,9 @@
 import "./navbar.css";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, memo } from "react";
 import { Link } from "react-router-dom";
+import logo from "../assets/img/logo10.png"
 
-export function Navbar() {
+function Navbar() {
     const [user, setUser] = useState(null);
 
     useEffect(() => {
@@ -20,8 +21,8 @@ export function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <div className="imagenb">
-          <img src="src/img/logo10.png" alt="" />
+        <div>
+          <img className="imagenb" src={logo} alt=""/>
         </div>
         <ul className="navbar-links">
           <li>
@@ -53,4 +54,4 @@ export function Navbar() {
     </nav>
   );
 }
-export default Navbar;
+export default memo(Navbar);

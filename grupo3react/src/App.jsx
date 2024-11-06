@@ -10,7 +10,7 @@ import { Carrinho } from './pages/Carrinho/Carrinho'
 import { FinalCompra } from './pages/Finalizar/FinalCompra'
 import { Login } from "./pages/Login/Login"
 import Navbar from './components/Navbar'
-import { Home } from './pages/Home/home';
+import { Home } from './pages/Home/Home';
 
 function App() {
 

@@ -24,6 +24,7 @@ function CategoriaDetalhe() {
   const filteredCryptos = cryptocurrencies.filter(crypto => crypto.categoria === categoria && crypto.quantidade > 0);
 
   return (
+    <main className='bodyCategoriaDetalhe'>
     <div className="categoria-detalhe">
       <h1>{categoria}</h1>
       <br />
@@ -49,6 +50,7 @@ function CategoriaDetalhe() {
         ))}
       </div>
     </div>
+    </main>
   );
 }
 
