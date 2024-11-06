@@ -1,11 +1,11 @@
 import { useState, useEffect, useContext } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
-import './descricao.css';  
+import './descricao.css';
 import { GeralContext } from '../../context/GeralContext';
 import { api } from '../../api/api';
 
-export function DescricaoProdutos(){
-    const { id } = useParams(); 
+export function DescricaoProdutos() {
+    const { id } = useParams();
     const [produto, setProduto] = useState({
         id: "faba",
         nome: "Produto",
@@ -25,7 +25,7 @@ export function DescricaoProdutos(){
         getProduto();
     }, [id]);
 
-    async function getProduto(){ 
+    async function getProduto() {
         try {
             const response = await api.get(`/produtos/${id}`);
             setProduto(response.data);
@@ -39,8 +39,7 @@ export function DescricaoProdutos(){
     };
 
     const handleAdicionarAoCarrinho = () => {
-        adicionarNoCarrinhoContext(produto.id);  
-        console.log("Carrinho atualizado:", carrinho);
+        adicionarNoCarrinhoContext(produto.id);
 
         setAlerta("Produto adicionado ao carrinho!");
 

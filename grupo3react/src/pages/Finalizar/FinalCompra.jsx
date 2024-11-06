@@ -1,3 +1,6 @@
+import { useState, useContext } from 'react';
+import './finalCompra.css';
+import { GeralContext } from '../../context/GeralContext';
 
 import { useEffect, useState } from 'react'
 import { useHistory } from "react-router-dom";
@@ -13,14 +16,9 @@ export function FinalCompra () {
 
     useEffect(() => {
         getPedidos()
-        // getaAllPost()
     }, [])
 
     const history = useHistory();
-
-    // const getaAllPost = async () => {
-    //     const response = await api.get('/pedidos')
-    // }
 
     const getUserId = () => {
         const id = JSON.parse(localStorage.getItem("user")).id
@@ -77,10 +75,10 @@ export function FinalCompra () {
         }
       }
 
-
-const handleCheckbocSelecionado = (index) => {
-    setCheckSelecionado(index);
-}
+    const calcularSubtotal = () => {
+        console.log(carrinho);
+        return carrinho.reduce((acc, item) => acc + item.preco * item.quantidade, 0);
+    };
 
     return (
         <>
@@ -121,9 +119,6 @@ const handleCheckbocSelecionado = (index) => {
             <div className='boleto'><input className='input' checked={checkSelecionado === 3} onChange={() => handleCheckbocSelecionado(3)} type="checkbox" /><p>Boleto</p>
                 <img src="src/img/boleto-logo.png" alt="" />
             </div>
-            <div className='finalizarFinal'><h3 className='valorT'>Valor Total</h3> <h3 className='real'>R$</h3></div>
-            <button className='pagar'>Pagar</button>
-        </div>
         </main>
         </body>
         
