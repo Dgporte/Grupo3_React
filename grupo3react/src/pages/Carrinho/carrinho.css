@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: #181a20;
+    background-color: #181a20;
     height: 100vh;
     background-position: 70%;
     background-size: cover;
@@ -90,4 +90,3 @@ body {
 .total {
     font-weight: bold;
 }
-

@@ -1,61 +1,46 @@
+import { useState, useContext } from 'react';
+import './finalCompra.css';
+import { GeralContext } from '../../context/GeralContext';
 
-import { useState } from 'react'
-import './finalCompra.css'
+export function FinalCompra() {
+    const { carrinho } = useContext(GeralContext);  // Acessa o carrinho do contexto
+    const [checkSelecionado, setCheckSelecionado] = useState(null);
 
-export function FinalCompra () {
-const [checkSelecionado, setCheckSelecionado] = useState(null);
+    const handleCheckbocSelecionado = (index) => {
+        setCheckSelecionado(index);
+    };
 
-
-const handleCheckbocSelecionado = (index) => {
-    setCheckSelecionado(index);
-}
+    const calcularSubtotal = () => {
+        console.log(carrinho);
+        return carrinho.reduce((acc, item) => acc + item.preco * item.quantidade, 0);
+    };
 
     return (
-        <>
         <main>
-        <div className='mainFinal'>
-        <div className='produtoFinal'>
-        <div className='tituloFinal'>
-            <h3>Produtos</h3>
+            <div className='mainFinal'>
+                <div className='produtoFinal'>
+                    <div className='tituloFinal'>
+                        <h3>Produtos</h3>
+                    </div>
+
+                    <ul>
+                        {carrinho.map((item) => (
+                            <li key={item.id} className='produtoItem'>
+                                <span>{item.nome}</span>
+                                <span>Quantidade: {item.quantidade}</span>
+                                <span>Preço: R$ {item.preco.toLocaleString()}</span>
+                            </li>
+                        ))}
+                    </ul>
+
+                    <div className='subtotalFinal'>
+                        <h3>SUBTOTAL</h3>
+                        <h3 className='precoFinal'>R$ {calcularSubtotal().toLocaleString()}</h3>
+                    </div>
+                </div>
             </div>
-        <div className='cupomFinal1'>
-            <h3>Possui um cupom de desconto ou voucher?</h3>
-            <div className='seuCupomFinal1'>
-            <input className='inputFinal1' placeholder='DIGITE SEU CUPOM' type="text" /> <button className='removerFinal'>REMOVER</button>
-            </div>
-            </div>
-            <div className='subtotalFinal'>
-                <h3>SUBTOTAL</h3> <h3 className='precoFinal'>R$</h3>
-            </div>
-        </div>
-        <div className='termosFinal'>
-            <h4>Informações importantes:</h4>
-            <p>• Todos os itens são entregues apenas de forma digital por download ou créditos direto na conta e estão sujeitos à política de reembolso.</p>
-            <p>• Verifique os requisitos de sistema na página de cada moeda e os Termos de Uso antes de realizar a compra.</p>
-            <p>• Alguns itens possuem limite temporário de compra e podem levar em torno de 2 dias para poder fazer uma nova compra do mesmo item.</p>
-            </div>
-        </div>
-        <div className='pagamentoFinal'>
-            <div className='opcoesFinal'><h3>Formas de pagamento</h3></div>
-            <div className='cartaoDeb'><input className='inputFinal2' checked={checkSelecionado === 0} onChange={() => handleCheckbocSelecionado(0)} type="checkbox" /><p>Cartao de Credito</p>
-                <img className='mastercard1' src="src/img/mastercard-3.jpg" alt="" />
-                <img className='visa1' src="src/img/visa.jpg" alt="" />
-            </div>
-            <div className='cartaoCre'><input className='input' checked={checkSelecionado === 1} onChange={() => handleCheckbocSelecionado(1)} type="checkbox" /><p>Cartao de Debito</p>
-            <img className='mastercard2' src="src/img/mastercard-3.jpg" alt="" />
-            <img className='visa2' src="src/img/visa.jpg" alt="" />
-            </div>
-            <div className='pix'><input className='input' checked={checkSelecionado === 2} onChange={() => handleCheckbocSelecionado(2)} type="checkbox" /><p>PIX</p>
-            <img src="src/img/pixog.jpg" alt="" />
-            </div>
-            <div className='boleto'><input className='input' checked={checkSelecionado === 3} onChange={() => handleCheckbocSelecionado(3)} type="checkbox" /><p>Boleto</p>
-                <img src="src/img/boleto-logo.png" alt="" />
-            </div>
-            <div className='finalizarFinal'><h3 className='valorT'>Valor Total</h3> <h3 className='real'>R$</h3></div>
-            <button className='pagar'>Pagar</button>
-        </div>
         </main>
-        </>
-    )
-    
+    );
 }
+
+export default FinalCompra;
