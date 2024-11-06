@@ -108,7 +108,9 @@ export function Carrinho() {
               ))}
             </ul>
             <div className="total-container">
-              <h3>Total: R$ {calcularTotal().toLocaleString()}</h3>
+              <h3 className="total">
+                Total: R$ {calcularTotal().toLocaleString()}
+              </h3>
             </div>
             <button
               className="limpar-carrinho"
