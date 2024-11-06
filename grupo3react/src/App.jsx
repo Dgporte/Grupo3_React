@@ -11,6 +11,7 @@ import { FinalCompra } from './pages/Finalizar/FinalCompra'
 import { Login } from "./pages/Login/Login"
 import Navbar from './components/Navbar'
 import { Home } from './pages/Home/home';
+import { DescricaoProdutos } from './pages/Descricao/DescricaoProduto';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
       <Route exact path='/FinalCompra' component={FinalCompra}/>
       <Route exact path="/Login" component={Login}/>
       <Route exact path='/Carrinho' component={Carrinho}/>
+      <Route path="/produto/:id" component={DescricaoProdutos} />
     </Switch>
     </BrowserRouter>
     </>
