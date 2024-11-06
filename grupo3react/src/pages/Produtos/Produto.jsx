@@ -28,7 +28,7 @@ function Produto() {
   );
 
   return (
-    <body className='bodyProduto'>
+    <main className='bodyProduto'>
     <div className="produto">
       <input className='inputProduto'
         type="text"
@@ -58,7 +58,7 @@ function Produto() {
         ))}
       </div>
     </div>
-    </body>
+    </main>
   );
 }
 
