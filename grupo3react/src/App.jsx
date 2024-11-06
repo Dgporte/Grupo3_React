@@ -11,6 +11,7 @@ import { Login } from "./pages/Login/Login"
 import Navbar from './components/Navbar'
 import { Home } from './pages/Home/Home';
 import { DescricaoProdutos } from './pages/Descricao/DescricaoProduto';
+import {Historico} from './pages/Historico/Historico';
 
 function App() {
 
