@@ -17,7 +17,7 @@ function App() {
     <Switch>
       <Route exact path='/TelaDeCadastro' component={TelaDeCadastro}/>
       <Route exact path='/Produto' component={Produto} />
-      <Route path='/categoria/:category' component={CategoriaDetalhe} />
+      <Route path='/categoria/:categoria' component={CategoriaDetalhe} />
     </Switch>
     </BrowserRouter>
 

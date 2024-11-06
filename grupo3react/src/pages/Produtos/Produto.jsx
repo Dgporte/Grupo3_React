@@ -11,7 +11,8 @@ function Produto() {
     const fetchCryptocurrencies = async () => {
       try {
         const response = await axios.get('http://localhost:3000/produtos');
-        setCryptocurrencies(response.data.produtos);
+        setCryptocurrencies(response.data);
+        console.log("eeeee", response.data)
       } catch (error) {
         console.error('Erro ao buscar criptomoedas:', error);
       }
