@@ -14,9 +14,9 @@ export function Carrinho() {
       produtos.map((item) =>
         item.id === produtoId
           ? {
-              ...item,
-              quantidade: item.quantidade + produtoRemovido.quantidade,
-            }
+            ...item,
+            quantidade: item.quantidade + produtoRemovido.quantidade,
+          }
           : item
       )
     );
@@ -56,15 +56,12 @@ export function Carrinho() {
     } else {
       alert("Compra finalizada com sucesso!");
       limparCarrinho();
-      window.location.href = "/produtos";
+      window.location.href = "/FinalCompra";
     }
   };
 
   return (
     <main className="main">
-      <div className="imagem">
-        <img src="src/img/logo10.png" alt="" />
-      </div>
       <div className="form">
         <div className="carrinho-container">
           <h2 className="subtitulo">Carrinho</h2>
