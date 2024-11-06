@@ -20,48 +20,55 @@ body {
     padding: 20px;
 }
 
-.form {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    width: 50%;
-    overflow-y: auto;
-}
-
-.form2 {
-    margin: 0 auto;
-    scale: 1.4;
-}
-
 .imagem {
     width: 100%;
     max-width: 500px;
-    display: flex;
-    flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-bottom: 45%;
-    margin-left: 22%;
-    max-height: 80vh;
-    overflow-y: auto;
-    padding: 20px;
-    margin: auto;
-    top: 25%;
-    position: relative;
+    margin-top: 100px;
 }
 
 .carrinho-container {
-    width: 400px;
-    border: 1px solid #ccc;
-    padding: 15px;
-    background-color: #1c1c24;
-    height: 100%;
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
     border-radius: 10px;
+    min-height: 500px;
 }
+
+.lista {
+    flex-grow: 1;
+    overflow-y: auto;
+    max-height: 300px;
+}
+
+.total-container {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.limpar-carrinho,
+.finalizar-compra {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    margin-top: 10px;
+}
+
+.limpar-carrinho:hover,
+.finalizar-compra:hover {
+    transform: scale(1.05);
+}
+
 
 .subtitulo {
     margin-bottom: 10px;
+    margin-top: 10px;
     font-weight: bold;
     text-align: center;
 }
@@ -81,10 +88,6 @@ body {
 }
 
 .total {
-    margin-bottom: -30px;
     font-weight: bold;
 }
 
-.finalizar-compra {
-    margin-top: 20px;
-}
