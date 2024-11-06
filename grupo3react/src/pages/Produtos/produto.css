@@ -16,11 +16,11 @@ body {
 .produto, .categoria-detalhe {
   width: 80%;
   margin: 0 auto;
-  padding: 20px;
+  padding: 10px;
   background-image: linear-gradient(to right, #1c1c24, #46431c);
   border-radius: 8px;
   box-shadow: 0 4px 8px #ffee03c7;
-  background-size: cover; 
+  background-size: cover;
 }
 
 .produto h1 {
