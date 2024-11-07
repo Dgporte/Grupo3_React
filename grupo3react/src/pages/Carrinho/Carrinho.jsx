@@ -48,7 +48,7 @@ export function Carrinho() {
       alert("Compra finalizada com sucesso!");
       setTimeout(() => {
         window.location.href = "/produto";
-        limparCarrinho();
+        // limparCarrinho();
       }, 1500);
     }
   };

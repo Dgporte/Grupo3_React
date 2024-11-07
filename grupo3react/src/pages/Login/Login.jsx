@@ -8,9 +8,9 @@ export function Login() {
   const [error, SetError] = useState("");
   const [sucessMessage, setSucessMessage] = useState("");
 
-  useEffect(() => {
-    getallpost()
-  },[])
+  // useEffect(() => {
+  //   getallpost()
+  // },[])
 
   const history = useHistory();
 
@@ -18,10 +18,10 @@ export function Login() {
     window.location.reload();
   }
 
-  const getallpost = async () => {
-    const response = await api.get('/users')
-    setUsuario(response.data)
-  }
+  // const getallpost = async () => {
+  //   const response = await api.get('/users')
+  //   setUsuario(response.data)
+  // }
 
   const handleEnviar = async (e) => {
     e.preventDefault();
